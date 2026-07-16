@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducible local-file problem without private data
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not upload copyrighted media, credentials, personal paths, or plan files. Reproduce with synthetic media when possible.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Python and operating system versions
+    validations:
+      required: true
