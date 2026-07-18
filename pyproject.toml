@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "music-library-organizer"
-version = "0.1.0"
+version = "0.2.0"
 description = "Plan and safely copy a local music library into a deterministic layout"
 readme = "README.md"
 requires-python = ">=3.11"

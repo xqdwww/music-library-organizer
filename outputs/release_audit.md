@@ -1,47 +1,36 @@
 # Release Audit
 
-Audit date: 2026-07-16
+Audit date: 2026-07-19
+Candidate version: 0.2.0
 
-## Scope and behavior
+## Release decision
 
-- Local user-owned files only: PASS
-- MP3, FLAC, and M4A read/write actually tested: PASS
-- Deterministic scan/plan/apply flow: PASS
-- JSON and CSV metadata overrides: PASS
-- Default apply is dry-run; writes require `--execute`: PASS
-- No overwrite, collision preflight, source hashes, path traversal defense, symlink policy: PASS
-- Staged mode-0600 copies and rollback on injected failure: PASS
-- Local JPEG/PNG artwork embedding and extraction: PASS
-- Source files remain present and unchanged: PASS
+`READY_TO_PUBLISH`
+
+The v0.2 candidate adds explainable public-rating review, personal calibration, and explicit quarantine/rollback/purge workflows without changing the original plan-first organization boundary. No operation selects albums automatically. Scan, calibration, candidate generation, and preview remain non-destructive; mutation requires a signed persisted plan and separate explicit confirmation.
+
+## Security and correctness
+
+- Loopback review servers validate Host, same-origin Origin, CSRF tokens, JSON object shape, and a 1 MiB request limit.
+- Remote strings and URLs are escaped or restricted to HTTP(S); covers and public responses are size-bounded.
+- Delete plans are integrity checked; apply, rollback, recovery, and purge reconstruct trusted paths from the signed plan rather than mutable SQLite or journal values.
+- Quarantine moves never overwrite a concurrently created target and verify file hashes.
+- MusicBrainz and Discogs use fixed HTTPS API origins, bounded responses, rate limits, and local caches. Discogs cache entries expire and are deleted after six hours.
+- The prohibited GRAMMY HTML scraper and its fixture were removed. The opt-in award adapter uses only Taiwan Ministry of Culture open data.
 
 ## Verification
 
-- Python compile: PASS
-- Ruff: PASS
-- Unit/CLI suite: 19 tests, PASS
-- Isolated editable install: PASS
-- sdist and wheel build: PASS
-- CLI `--help` and `--version`: PASS
-- Network-denied scan/plan/execute smoke under macOS `sandbox-exec`: PASS
-- Dependency vulnerability audit after audit-toolchain remediation: PASS, no known vulnerabilities
-- Current-file privacy/secret/private-path scan: PASS
-- Media and large-file inventory: PASS, none tracked
-- License and provenance review: PASS
-- README claims versus implemented behavior: PASS
-- GitHub Actions static review: PASS; read-only token permissions and bounded timeout
+- Unit and CLI tests: 103 passed with `ResourceWarning` promoted to errors.
+- Ruff: PASS.
+- Python bytecode compilation: PASS.
+- Isolated sdist and wheel build: PASS.
+- Fresh wheel installation with runtime dependency: PASS (`music-organizer 0.2.0`, Mutagen 1.48.1).
+- Tests executed from the unpacked sdist: 103 passed.
+- CLI help/version, local scan, `--no-ratings`, and `--offline` smoke: PASS.
+- `pip-audit 2.10.1 --local --skip-editable`: no known vulnerabilities.
+- Privacy, secret, private-path, media, large-file, license, provenance, README, and GitHub Actions static checks: PASS.
+- Git whitespace validation: PASS on the publication tree.
 
-Required boundary statements:
-
-```text
-downloads_audio: false
-decrypts_media: false
-uses_platform_login: false
-uses_private_api: false
-stores_credentials: false
-contains_copyrighted_media: false
-network_required: false
-```
+The host prevented nesting `sandbox-exec`; offline/no-rating network boundaries are instead covered by explicit CLI modes and mocked source-call regression tests. CI performs the complete test/build path on Python 3.11.
 
 Remaining P0/P1 issues: none.
-
-Verdict: `READY_TO_PUBLISH`

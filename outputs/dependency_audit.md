@@ -1,19 +1,22 @@
 # Dependency and License Audit
 
-Audit date: 2026-07-16
+Audit date: 2026-07-19
 
-## Runtime dependency
+## Code dependencies
 
-The only runtime dependency is `mutagen>=1.47,<2`. Version 1.48.1 was installed and exercised against generated MP3, FLAC, and M4A media. Its package metadata declares `GPL-2.0-or-later`.
+- Runtime: `mutagen>=1.47,<2`; installed version 1.48.1 declares GPL-2.0-or-later.
+- Project license: GPL-2.0-or-later, compatible with the runtime dependency.
+- Test-only: FFmpeg generates synthetic silent media; no binary or generated media is distributed.
+- No vendored third-party source, JavaScript package, or copied Clash/OpenClash code is present.
+- `pip-audit 2.10.1 --local --skip-editable`: no known vulnerabilities.
 
-No source from Mutagen is vendored. Because the application imports Mutagen at runtime, this project is licensed `GPL-2.0-or-later` rather than MIT. The full license text and third-party notice are included.
+## Optional public data sources
 
-## Security audit
+- MusicBrainz: documented WS/2 endpoint, meaningful project User-Agent, 1.1 second minimum interval; core data is CC0 and supplementary data has separate MusicBrainz terms.
+- Discogs: documented API only, fixed origin, 2.5 second interval, required non-affiliation/source notices, and six-hour cache expiry/deletion. User/marketplace popularity fields are not used.
+- Taiwan Ministry of Culture dataset 58040: Open Government Data License 1.0; the source is attributed in evidence and notices.
+- GRAMMY website automation: rejected and removed because current terms prohibit unauthorized automated access.
 
-`pip-audit 2.10.1 --local --skip-editable` initially reported `PYSEC-2026-196` in the isolated environment's pip 26.1.1, not in a project runtime dependency. The audit environment was upgraded to the fixed pip 26.1.2 and the audit was rerun.
+No third-party data snapshot is distributed other than a minimal Taiwan open-data parser fixture.
 
-Final result: `No known vulnerabilities found`.
-
-The historical platform/npm dependency chain is absent. The application has no JavaScript or npm dependency and no runtime dependency on FFmpeg. FFmpeg is an external test-only tool used to create synthetic silence.
-
-Verdict: `DEPENDENCY_SECURITY_PASS_LICENSE_COMPATIBLE`
+Verdict: `DEPENDENCY_SECURITY_PASS_LICENSE_AND_SOURCE_TERMS_COMPATIBLE`

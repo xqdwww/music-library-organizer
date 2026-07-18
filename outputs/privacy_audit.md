@@ -1,26 +1,19 @@
 # Privacy and Secret Audit
 
-Audit date: 2026-07-16
+Audit date: 2026-07-19
 
-Scopes independently reviewed:
+Scopes: current source, tests, fixtures, examples, documentation, GitHub configuration, package manifest, generated distribution inventory, and the seven local commits not present on `origin/main`.
 
-- tracked candidate files, examples, tests, CI, and documentation;
-- generated distribution contents;
-- new Git history after repository initialization (required again at release gate);
-- media and large-file inventory;
-- private absolute paths, home-directory names, private IP ranges, credentials, authorization headers, keys, tokens, cookies, account identifiers, signed URLs, and remote/NAS configuration;
-- platform/download/decryption keywords with manual context review.
+## Current publication tree
 
-Results:
+- No private absolute path, home-directory identity, Hermes/NAS/SMB path, private IP, SSH material, credential value, cookie, API key, password, subscription URL, or authorization value is present.
+- `DISCOGS_TOKEN` is only an environment-variable name. The value is placed only in an HTTPS request header and is not logged, cached, serialized, or included in URLs.
+- No audio, artwork, database, generated media, or file larger than 1 MiB is included.
+- Fixtures are synthetic or minimal public open-data shapes. Personal library reports, inventory counts, directory names, paths, ratings, and review decisions are excluded.
+- Runtime SQLite, cache, reports, selections, plans, and quarantine state are ignored and documented as private.
 
-- No private absolute path or private runtime directory is present.
-- No credential, token, cookie, key, authorization header, account data, signed URL, private IP, SSH configuration, or NAS path is present.
-- No music, image, generated media, binary, or file over 1 MiB is tracked.
-- Network/decryption/login/download terms occur only in explicit boundary documentation; no corresponding runtime implementation or network-library import exists.
-- Public URLs are limited to project/dependency documentation references.
-- Plan files can contain a user's local source root, are documented as private, and are ignored by default.
-- Tests generate synthetic silence and a one-pixel image in temporary directories and do not persist fixtures.
+## History disposition
 
-Required release-gate rescans: PASS.
+The seven unpublished local commits contain private-library aggregate reports and a removed website scraper. They must not be pushed. Publication is constructed as one clean fast-forward commit directly on the public `origin/main` ancestry. The local commits remain preserved locally and are not rewritten or deleted.
 
-Verdict: `PRIVACY_AND_SECRET_AUDIT_PASS`
+Verdict: `PRIVACY_AND_SECRET_AUDIT_PASS_FOR_CLEAN_PUBLICATION_HISTORY`

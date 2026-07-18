@@ -1,0 +1,15 @@
+{
+  "library_root": "/path/to/curated/music",
+  "quarantine_root": "/path/to/music-quarantine",
+  "state_root": "~/.local/state/music-library-organizer",
+  "musicbrainz_user_agent": "music-library-organizer/0.2 (contact: https://github.com/xqdwww/music-library-organizer)",
+  "threshold": 60,
+  "conflict_span": 20,
+  "critic_share": 0.6,
+  "community_share": 0.4,
+  "maximum_source_share": 0.5,
+  "source_weights": {
+    "musicbrainz": 1.0,
+    "discogs": 1.0
+  }
+}

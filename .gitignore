@@ -11,3 +11,10 @@ dist/
 plan.json
 *.local.json
 outputs/test-*/
+runtime/
+data/rating_cache/
+*.sqlite3
+selection*.json
+delete_plan*.json
+move_manifest*.json
+rollback_manifest*.json

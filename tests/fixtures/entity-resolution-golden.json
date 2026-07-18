@@ -1,0 +1,1706 @@
+{
+  "schema_version": 1,
+  "seed": 20260718,
+  "cases": [
+    {
+      "case_id": "golden-001",
+      "category": "popular",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:1",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:1"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:1"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-002",
+      "category": "popular",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:2",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:2"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:2"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-003",
+      "category": "popular",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:3",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:3"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:3"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-004",
+      "category": "popular",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:4",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:4"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:4"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-005",
+      "category": "popular",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:5",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:5"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:5"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-006",
+      "category": "popular",
+      "local_artist": "Fixture Artist 6",
+      "local_album": "Fixture Album 6",
+      "year": 2005,
+      "expected_entity": "fixture:entity:6",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:6"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:6"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-007",
+      "category": "popular",
+      "local_artist": "Fixture Artist 7",
+      "local_album": "Fixture Album 7",
+      "year": 2006,
+      "expected_entity": "fixture:entity:7",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:7"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:7"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-008",
+      "category": "popular",
+      "local_artist": "Fixture Artist 8",
+      "local_album": "Fixture Album 8",
+      "year": 2007,
+      "expected_entity": "fixture:entity:8",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:8"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:8"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-009",
+      "category": "popular",
+      "local_artist": "Fixture Artist 9",
+      "local_album": "Fixture Album 9",
+      "year": 2008,
+      "expected_entity": "fixture:entity:9",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:9"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:9"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-010",
+      "category": "popular",
+      "local_artist": "Fixture Artist 10",
+      "local_album": "Fixture Album 10",
+      "year": 2009,
+      "expected_entity": "fixture:entity:10",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:10"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:10"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-011",
+      "category": "popular",
+      "local_artist": "Fixture Artist 11",
+      "local_album": "Fixture Album 11",
+      "year": 2010,
+      "expected_entity": "fixture:entity:11",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:11"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:11"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-012",
+      "category": "popular",
+      "local_artist": "Fixture Artist 12",
+      "local_album": "Fixture Album 12",
+      "year": 2011,
+      "expected_entity": "fixture:entity:12",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:12"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:12"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-013",
+      "category": "popular",
+      "local_artist": "Fixture Artist 13",
+      "local_album": "Fixture Album 13",
+      "year": 2012,
+      "expected_entity": "fixture:entity:13",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:13"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:13"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-014",
+      "category": "popular",
+      "local_artist": "Fixture Artist 14",
+      "local_album": "Fixture Album 14",
+      "year": 2013,
+      "expected_entity": "fixture:entity:14",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:14"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:14"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-015",
+      "category": "popular",
+      "local_artist": "Fixture Artist 15",
+      "local_album": "Fixture Album 15",
+      "year": 2014,
+      "expected_entity": "fixture:entity:15",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:15"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:15"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-016",
+      "category": "popular",
+      "local_artist": "Fixture Artist 16",
+      "local_album": "Fixture Album 16",
+      "year": 2015,
+      "expected_entity": "fixture:entity:16",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:16"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:16"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-017",
+      "category": "popular",
+      "local_artist": "Fixture Artist 17",
+      "local_album": "Fixture Album 17",
+      "year": 2016,
+      "expected_entity": "fixture:entity:17",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:17"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:17"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-018",
+      "category": "popular",
+      "local_artist": "Fixture Artist 18",
+      "local_album": "Fixture Album 18",
+      "year": 2017,
+      "expected_entity": "fixture:entity:18",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:18"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:18"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-019",
+      "category": "popular",
+      "local_artist": "Fixture Artist 19",
+      "local_album": "Fixture Album 19",
+      "year": 2018,
+      "expected_entity": "fixture:entity:19",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:19"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:19"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-020",
+      "category": "popular",
+      "local_artist": "Fixture Artist 20",
+      "local_album": "Fixture Album 20",
+      "year": 2019,
+      "expected_entity": "fixture:entity:20",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:20"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:20"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-021",
+      "category": "popular",
+      "local_artist": "Fixture Artist 21",
+      "local_album": "Fixture Album 21",
+      "year": 2000,
+      "expected_entity": "fixture:entity:21",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:21"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:21"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-022",
+      "category": "popular",
+      "local_artist": "Fixture Artist 22",
+      "local_album": "Fixture Album 22",
+      "year": 2001,
+      "expected_entity": "fixture:entity:22",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:22"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:22"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-023",
+      "category": "popular",
+      "local_artist": "Fixture Artist 23",
+      "local_album": "Fixture Album 23",
+      "year": 2002,
+      "expected_entity": "fixture:entity:23",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:23"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:23"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-024",
+      "category": "popular",
+      "local_artist": "Fixture Artist 24",
+      "local_album": "Fixture Album 24",
+      "year": 2003,
+      "expected_entity": "fixture:entity:24",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:24"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:24"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-025",
+      "category": "popular",
+      "local_artist": "Fixture Artist 25",
+      "local_album": "Fixture Album 25",
+      "year": 2004,
+      "expected_entity": "fixture:entity:25",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:25"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:25"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-026",
+      "category": "classical",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:26",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:26"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:26"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-027",
+      "category": "classical",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:27",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:27"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:27"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-028",
+      "category": "classical",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:28",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:28"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:28"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-029",
+      "category": "classical",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:29",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:29"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:29"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-030",
+      "category": "classical",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:30",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:30"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:30"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-031",
+      "category": "classical",
+      "local_artist": "Fixture Artist 6",
+      "local_album": "Fixture Album 6",
+      "year": 2005,
+      "expected_entity": "fixture:entity:31",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:31"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:31"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-032",
+      "category": "classical",
+      "local_artist": "Fixture Artist 7",
+      "local_album": "Fixture Album 7",
+      "year": 2006,
+      "expected_entity": "fixture:entity:32",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:32"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:32"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-033",
+      "category": "classical",
+      "local_artist": "Fixture Artist 8",
+      "local_album": "Fixture Album 8",
+      "year": 2007,
+      "expected_entity": "fixture:entity:33",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:33"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:33"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-034",
+      "category": "classical",
+      "local_artist": "Fixture Artist 9",
+      "local_album": "Fixture Album 9",
+      "year": 2008,
+      "expected_entity": "fixture:entity:34",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:34"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:34"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-035",
+      "category": "classical",
+      "local_artist": "Fixture Artist 10",
+      "local_album": "Fixture Album 10",
+      "year": 2009,
+      "expected_entity": "fixture:entity:35",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:35"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:35"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-036",
+      "category": "classical",
+      "local_artist": "Fixture Artist 11",
+      "local_album": "Fixture Album 11",
+      "year": 2010,
+      "expected_entity": "fixture:entity:36",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:36"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:36"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-037",
+      "category": "classical",
+      "local_artist": "Fixture Artist 12",
+      "local_album": "Fixture Album 12",
+      "year": 2011,
+      "expected_entity": "fixture:entity:37",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:37"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:37"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-038",
+      "category": "classical",
+      "local_artist": "Fixture Artist 13",
+      "local_album": "Fixture Album 13",
+      "year": 2012,
+      "expected_entity": "fixture:entity:38",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:38"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:38"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-039",
+      "category": "classical",
+      "local_artist": "Fixture Artist 14",
+      "local_album": "Fixture Album 14",
+      "year": 2013,
+      "expected_entity": "fixture:entity:39",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:39"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:39"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-040",
+      "category": "classical",
+      "local_artist": "Fixture Artist 15",
+      "local_album": "Fixture Album 15",
+      "year": 2014,
+      "expected_entity": "fixture:entity:40",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:40"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:40"
+      ],
+      "invariant": "do_not_merge_different_performance"
+    },
+    {
+      "case_id": "golden-041",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:41",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:41"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:41"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-042",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:42",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:42"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:42"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-043",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:43",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:43"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:43"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-044",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:44",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:44"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:44"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-045",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:45",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:45"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:45"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-046",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 6",
+      "local_album": "Fixture Album 6",
+      "year": 2005,
+      "expected_entity": "fixture:entity:46",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:46"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:46"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-047",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 7",
+      "local_album": "Fixture Album 7",
+      "year": 2006,
+      "expected_entity": "fixture:entity:47",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:47"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:47"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-048",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 8",
+      "local_album": "Fixture Album 8",
+      "year": 2007,
+      "expected_entity": "fixture:entity:48",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:48"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:48"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-049",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 9",
+      "local_album": "Fixture Album 9",
+      "year": 2008,
+      "expected_entity": "fixture:entity:49",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:49"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:49"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-050",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 10",
+      "local_album": "Fixture Album 10",
+      "year": 2009,
+      "expected_entity": "fixture:entity:50",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:50"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:50"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-051",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 11",
+      "local_album": "Fixture Album 11",
+      "year": 2010,
+      "expected_entity": "fixture:entity:51",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:51"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:51"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-052",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 12",
+      "local_album": "Fixture Album 12",
+      "year": 2011,
+      "expected_entity": "fixture:entity:52",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:52"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:52"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-053",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 13",
+      "local_album": "Fixture Album 13",
+      "year": 2012,
+      "expected_entity": "fixture:entity:53",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:53"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:53"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-054",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 14",
+      "local_album": "Fixture Album 14",
+      "year": 2013,
+      "expected_entity": "fixture:entity:54",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:54"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:54"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-055",
+      "category": "jazz",
+      "local_artist": "Fixture Artist 15",
+      "local_album": "Fixture Album 15",
+      "year": 2014,
+      "expected_entity": "fixture:entity:55",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:55"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:55"
+      ],
+      "invariant": "do_not_merge_different_session"
+    },
+    {
+      "case_id": "golden-056",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2000,
+      "expected_entity": "fixture:entity:56",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:56"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:56"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-057",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2001,
+      "expected_entity": "fixture:entity:57",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:57"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:57"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-058",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2002,
+      "expected_entity": "fixture:entity:58",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:58"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:58"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-059",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2003,
+      "expected_entity": "fixture:entity:59",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:59"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:59"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-060",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2004,
+      "expected_entity": "fixture:entity:60",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:60"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:60"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-061",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2005,
+      "expected_entity": "fixture:entity:61",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:61"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:61"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-062",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2006,
+      "expected_entity": "fixture:entity:62",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:62"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:62"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-063",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2007,
+      "expected_entity": "fixture:entity:63",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:63"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:63"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-064",
+      "category": "chinese",
+      "local_artist": "王菲",
+      "local_album": "唱游",
+      "year": 2008,
+      "expected_entity": "fixture:entity:64",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "ZH_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:64"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:64"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-065",
+      "category": "chinese",
+      "local_artist": "陳奕迅",
+      "local_album": "U87",
+      "year": 2009,
+      "expected_entity": "fixture:entity:65",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "HK_TW_CANTONESE",
+      "allowed_candidates": [
+        "fixture:entity:65"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:65"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-066",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2000,
+      "expected_entity": "fixture:entity:66",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:66"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:66"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-067",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2001,
+      "expected_entity": "fixture:entity:67",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:67"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:67"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-068",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2002,
+      "expected_entity": "fixture:entity:68",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:68"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:68"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-069",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2003,
+      "expected_entity": "fixture:entity:69",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:69"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:69"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-070",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2004,
+      "expected_entity": "fixture:entity:70",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:70"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:70"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-071",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2005,
+      "expected_entity": "fixture:entity:71",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:71"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:71"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-072",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2006,
+      "expected_entity": "fixture:entity:72",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:72"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:72"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-073",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2007,
+      "expected_entity": "fixture:entity:73",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:73"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:73"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-074",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2008,
+      "expected_entity": "fixture:entity:74",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:74"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:74"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-075",
+      "category": "japanese",
+      "local_artist": "宇多田ヒカル",
+      "local_album": "初恋",
+      "year": 2009,
+      "expected_entity": "fixture:entity:75",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "JA_CONFIRMED",
+      "allowed_candidates": [
+        "fixture:entity:75"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:75"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-076",
+      "category": "other_cjk",
+      "local_artist": "漢字藝術家",
+      "local_album": "漢字專輯",
+      "year": 2000,
+      "expected_entity": "fixture:entity:76",
+      "expected_match_status": "LIKELY_NEEDS_REVIEW",
+      "expected_language_bucket": "UNKNOWN_CJK",
+      "allowed_candidates": [
+        "fixture:entity:76"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:76"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-077",
+      "category": "other_cjk",
+      "local_artist": "漢字藝術家",
+      "local_album": "漢字專輯",
+      "year": 2001,
+      "expected_entity": "fixture:entity:77",
+      "expected_match_status": "LIKELY_NEEDS_REVIEW",
+      "expected_language_bucket": "UNKNOWN_CJK",
+      "allowed_candidates": [
+        "fixture:entity:77"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:77"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-078",
+      "category": "other_cjk",
+      "local_artist": "漢字藝術家",
+      "local_album": "漢字專輯",
+      "year": 2002,
+      "expected_entity": "fixture:entity:78",
+      "expected_match_status": "LIKELY_NEEDS_REVIEW",
+      "expected_language_bucket": "UNKNOWN_CJK",
+      "allowed_candidates": [
+        "fixture:entity:78"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:78"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-079",
+      "category": "other_cjk",
+      "local_artist": "漢字藝術家",
+      "local_album": "漢字專輯",
+      "year": 2003,
+      "expected_entity": "fixture:entity:79",
+      "expected_match_status": "LIKELY_NEEDS_REVIEW",
+      "expected_language_bucket": "UNKNOWN_CJK",
+      "allowed_candidates": [
+        "fixture:entity:79"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:79"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-080",
+      "category": "other_cjk",
+      "local_artist": "漢字藝術家",
+      "local_album": "漢字專輯",
+      "year": 2004,
+      "expected_entity": "fixture:entity:80",
+      "expected_match_status": "LIKELY_NEEDS_REVIEW",
+      "expected_language_bucket": "UNKNOWN_CJK",
+      "allowed_candidates": [
+        "fixture:entity:80"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:80"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-081",
+      "category": "compilation",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:81",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:81"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:81"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-082",
+      "category": "compilation",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:82",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:82"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:82"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-083",
+      "category": "compilation",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:83",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:83"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:83"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-084",
+      "category": "compilation",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:84",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:84"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:84"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-085",
+      "category": "compilation",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:85",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:85"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:85"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-086",
+      "category": "soundtrack",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:86",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:86"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:86"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-087",
+      "category": "soundtrack",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:87",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:87"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:87"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-088",
+      "category": "soundtrack",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:88",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:88"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:88"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-089",
+      "category": "soundtrack",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:89",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:89"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:89"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-090",
+      "category": "soundtrack",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:90",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:90"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:90"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-091",
+      "category": "live",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:91",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:91"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:91"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-092",
+      "category": "live",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:92",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:92"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:92"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-093",
+      "category": "live",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:93",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:93"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:93"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-094",
+      "category": "live",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:94",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:94"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:94"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-095",
+      "category": "live",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:95",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:95"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:95"
+      ],
+      "invariant": "controlled_identity"
+    },
+    {
+      "case_id": "golden-096",
+      "category": "edition_boxset",
+      "local_artist": "Fixture Artist 1",
+      "local_album": "Fixture Album 1",
+      "year": 2000,
+      "expected_entity": "fixture:entity:96",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:96"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:96"
+      ],
+      "invariant": "reconcile_release_to_master"
+    },
+    {
+      "case_id": "golden-097",
+      "category": "edition_boxset",
+      "local_artist": "Fixture Artist 2",
+      "local_album": "Fixture Album 2",
+      "year": 2001,
+      "expected_entity": "fixture:entity:97",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:97"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:97"
+      ],
+      "invariant": "reconcile_release_to_master"
+    },
+    {
+      "case_id": "golden-098",
+      "category": "edition_boxset",
+      "local_artist": "Fixture Artist 3",
+      "local_album": "Fixture Album 3",
+      "year": 2002,
+      "expected_entity": "fixture:entity:98",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:98"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:98"
+      ],
+      "invariant": "reconcile_release_to_master"
+    },
+    {
+      "case_id": "golden-099",
+      "category": "edition_boxset",
+      "local_artist": "Fixture Artist 4",
+      "local_album": "Fixture Album 4",
+      "year": 2003,
+      "expected_entity": "fixture:entity:99",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:99"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:99"
+      ],
+      "invariant": "reconcile_release_to_master"
+    },
+    {
+      "case_id": "golden-100",
+      "category": "edition_boxset",
+      "local_artist": "Fixture Artist 5",
+      "local_album": "Fixture Album 5",
+      "year": 2004,
+      "expected_entity": "fixture:entity:100",
+      "expected_match_status": "EXACT",
+      "expected_language_bucket": "NON_CJK",
+      "allowed_candidates": [
+        "fixture:entity:100"
+      ],
+      "forbidden_candidates": [
+        "fixture:wrong:100"
+      ],
+      "invariant": "reconcile_release_to_master"
+    }
+  ]
+}
