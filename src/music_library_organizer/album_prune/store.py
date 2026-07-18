@@ -72,6 +72,11 @@ CREATE TABLE IF NOT EXISTS personal_policies (
     policy_json TEXT NOT NULL,
     updated_at TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS curator_runs (
+    run_id TEXT PRIMARY KEY,
+    created_at TEXT NOT NULL,
+    report_json TEXT NOT NULL
+);
 """
 
 
@@ -351,6 +356,21 @@ class ReviewStore:
             "SELECT policy_json FROM personal_policies WHERE policy_id='active' AND enabled=1"
         ).fetchone()
         return json.loads(row[0]) if row else None
+
+    def save_curator_report(self, run_id: str, report: dict[str, Any]) -> None:
+        with self.connection:
+            self.connection.execute(
+                "INSERT INTO curator_runs VALUES (?, ?, ?)",
+                (run_id, now(), json.dumps(report, ensure_ascii=False)),
+            )
+
+    def latest_curator_report(self) -> dict[str, Any]:
+        row = self.connection.execute(
+            "SELECT report_json FROM curator_runs ORDER BY created_at DESC, rowid DESC LIMIT 1"
+        ).fetchone()
+        if row is None:
+            raise KeyError("no Personal Library Curator analysis is available")
+        return json.loads(row[0])
 
     def save_rating_attempt(self, album_id: str, source: str, status: str, error: str | None = None) -> None:
         with self.connection:

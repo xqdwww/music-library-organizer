@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import json
 import os
+import secrets
+from collections import defaultdict
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -12,9 +15,12 @@ from .calibration import (
     policy_template,
     threshold_report,
 )
+from .curator import build_curator_report
 from .entity_resolution import language_route
 from .models import ALLOWED_MATCHES, AlbumReview, LocalAlbum
+from .normalize import canonical_identity
 from .personal_policy import PersonalPruningPolicy, build_personal_candidate_report
+from .personal_signals import match_apple_signals, match_netease_signals
 from .professional import OfficialAwardsSource
 from .quarantine import (
     apply_delete_plan,
@@ -27,7 +33,7 @@ from .quarantine import (
 from .ratings import DiscogsSource, HttpCache, MusicBrainzSource
 from .scanner import scan_albums
 from .scoring import ScoringConfig, classify
-from .store import ReviewStore
+from .store import ReviewStore, now
 
 DEFAULT_USER_AGENT = "music-library-organizer/0.2 (contact: https://github.com/xqdwww/music-library-organizer)"
 
@@ -344,6 +350,78 @@ class AlbumPruneService:
 
     def personal_candidates(self) -> list[dict[str, Any]]:
         return self.personal_candidate_report()["candidates"]
+
+    def _current_curator_reviews(self, library_root: Path | None) -> tuple[list[AlbumReview], dict[str, Any]]:
+        with ReviewStore(self.store_path) as store:
+            previous = store.list_reviews()
+        if library_root is None:
+            return previous, {"mode": "STORED_REVIEW_STATE", "albums_scanned": len(previous)}
+        current_albums = scan_albums(library_root)
+        by_path = {review.local.path: review for review in previous}
+        by_fingerprint: dict[str, list[AlbumReview]] = defaultdict(list)
+        by_identity: dict[tuple[str, str, int | None], list[AlbumReview]] = defaultdict(list)
+        for review in previous:
+            by_fingerprint[review.local.fingerprint].append(review)
+            identity = (*canonical_identity(review.local.artist, review.local.album), review.local.year)
+            by_identity[identity].append(review)
+        result: list[AlbumReview] = []
+        matched_by = defaultdict(int)
+        for local in current_albums:
+            prior = by_path.get(local.path)
+            basis = "path"
+            if prior is None and len(by_fingerprint[local.fingerprint]) == 1:
+                prior = by_fingerprint[local.fingerprint][0]
+                basis = "fingerprint"
+            if prior is None:
+                identity = (*canonical_identity(local.artist, local.album), local.year)
+                if len(by_identity[identity]) == 1:
+                    prior = by_identity[identity][0]
+                    basis = "canonical_identity_year"
+            if prior is None:
+                result.append(AlbumReview(local=local, canonical=None))
+                matched_by["new_unmatched"] += 1
+                continue
+            self._merge_prior_local_metadata(local, prior.local)
+            result.append(replace(prior, local=local, checked=False))
+            matched_by[basis] += 1
+        return result, {
+            "mode": "FULL_LIBRARY_READ_ONLY_SCAN",
+            "library_root": str(library_root.expanduser().resolve()),
+            "albums_scanned": len(result),
+            "audio_files_scanned": sum(review.local.track_count for review in result),
+            "metadata_reuse": dict(matched_by),
+            "media_writes": 0,
+        }
+
+    def analyze_curator(
+        self,
+        *,
+        library_root: Path | None = None,
+        apple_source: Path | None = None,
+        netease_source: Path | None = None,
+        output: Path | None = None,
+    ) -> dict[str, Any]:
+        reviews, scan_summary = self._current_curator_reviews(library_root)
+        apple, apple_summary = match_apple_signals(reviews, apple_source)
+        netease, netease_summary = match_netease_signals(reviews, netease_source)
+        report = build_curator_report(reviews, apple, netease)
+        run_id = "cur_" + now().replace(":", "").replace("-", "").replace("+", "_") + "_" + secrets.token_hex(3)
+        report["run_id"] = run_id
+        report["inputs"] = {
+            "library": scan_summary,
+            "apple": apple_summary,
+            "netease": netease_summary,
+        }
+        with ReviewStore(self.store_path) as store:
+            store.save_curator_report(run_id, report)
+        destination = output or self.state_root / "curator" / "latest.json"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return {**report, "output": str(destination)}
+
+    def curator_report(self) -> dict[str, Any]:
+        with ReviewStore(self.store_path) as store:
+            return store.latest_curator_report()
 
     def protect(self, album_id: str, reason: str) -> dict[str, str]:
         with ReviewStore(self.store_path) as store:

@@ -9,6 +9,7 @@ from typing import Any
 
 from .album_prune.calibration import create_read_only_baseline, verify_read_only_baseline
 from .album_prune.calibration_webui import serve_calibration
+from .album_prune.curator_webui import serve_curator
 from .album_prune.scoring import ScoringConfig
 from .album_prune.service import DEFAULT_USER_AGENT, AlbumPruneService
 from .album_prune.webui import serve as serve_album_review
@@ -153,6 +154,19 @@ def parser() -> argparse.ArgumentParser:
         help="generate the active personal candidate groups without changing media",
     )
     personal_candidates.add_argument("--output", type=Path)
+    curator_analyze = prune_commands.add_parser(
+        "curator-analyze",
+        help="build a read-only personal collection value analysis",
+    )
+    curator_analyze.add_argument("--library-root", type=Path)
+    curator_analyze.add_argument("--apple-source", type=Path)
+    curator_analyze.add_argument("--netease-source", type=Path)
+    curator_analyze.add_argument("--output", type=Path)
+    curator_report = prune_commands.add_parser("curator-report", help="show the latest Personal Curator analysis")
+    curator_report.add_argument("--output", type=Path)
+    curator_serve = prune_commands.add_parser("curator-serve", help="serve the read-only Personal Curator UI")
+    curator_serve.add_argument("--host", default="127.0.0.1")
+    curator_serve.add_argument("--port", type=int, default=8771)
     calibration_serve = prune_commands.add_parser("calibration-serve", help="serve the non-destructive calibration UI")
     calibration_serve.add_argument("--batch-id", required=True)
     calibration_serve.add_argument("--host", default="127.0.0.1")
@@ -298,6 +312,32 @@ def _album_prune(args: argparse.Namespace) -> dict[str, Any] | None:
                 **value["summary"],
             }
         return value
+    if command == "curator-analyze":
+        configured_library = args.library_root or (
+            Path(str(config_data["library_root"])) if config_data.get("library_root") else None
+        )
+        value = service.analyze_curator(
+            library_root=configured_library,
+            apple_source=args.apple_source,
+            netease_source=args.netease_source,
+            output=args.output,
+        )
+        return {
+            "status": value["status"],
+            "run_id": value["run_id"],
+            "summary": value["summary"],
+            "inputs": value["inputs"],
+            "output": value["output"],
+        }
+    if command == "curator-report":
+        value = service.curator_report()
+        if args.output:
+            write_json(value, args.output)
+            return {"status": "written", "output": str(args.output), "summary": value["summary"]}
+        return value
+    if command == "curator-serve":
+        serve_curator(service, args.host, args.port)
+        return None
     if command == "calibration-serve":
         serve_calibration(service, args.batch_id, args.host, args.port)
         return None

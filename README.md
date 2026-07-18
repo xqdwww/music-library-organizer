@@ -160,6 +160,24 @@ counts are deduplicated. Automatic selection and deletion are always disabled.
 
 `calibration-enrich-library` sends each stored artist, album title, and year to the selected public service. Run it online only with explicit authorization to disclose the full library metadata. `--offline` consumes existing cache entries, records cache misses as unresolved external attempts, and sends nothing.
 
+## Personal Library Curator
+
+Personal Library Curator adds a read-only collection-value analysis above the existing rating and cleanup systems.
+It combines optional local Apple Music usage exports, existing public and professional evidence, collector
+protection, and release-edition redundancy. Missing personal data is neutral and never interpreted as zero plays.
+
+```console
+music-organizer album-prune --state-root <state> curator-analyze --library-root <music-library>
+music-organizer album-prune --state-root <state> curator-analyze --library-root <music-library> --apple-source Library.xml
+music-organizer album-prune --state-root <state> curator-report
+music-organizer album-prune --state-root <state> curator-serve --port 8771
+```
+
+The output classes are `KEEP`, `REVIEW`, `LOW_PERSONAL_VALUE`, `DUPLICATE_VALUE`, and `PROTECTED_COLLECTION`.
+Every row starts unchecked. The dedicated UI is GET-only and contains no cleanup operation. See
+[Personal Library Curator v1](docs/personal-library-curator.md) for accepted import fields, score weights, duplicate
+guards, and safety boundaries.
+
 Run `calibration-scope` before enrichment. Explicit Chinese-language records are excluded. Classical and jazz records remain in specialty calibration, Japanese/Korean script is retained as non-Chinese, and unresolved Han-script records are withheld for language review rather than guessed.
 
 Entity resolution is staged and auditable: embedded IDs, barcode/catalogue lookup, exact structured queries,
