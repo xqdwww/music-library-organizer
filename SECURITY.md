@@ -6,4 +6,4 @@ The organization commands are local-only. Optional `album-prune` rating commands
 
 Treat plan files, the album-review SQLite database, response caches, and reports as private because they contain library metadata and local paths. Review plans before any apply operation, work from backups, and do not run the tool with elevated privileges.
 
-The review web controls must remain bound to loopback. They validate Host, Origin, CSRF tokens, request sizes, and untrusted public-source values. Do not place them behind a proxy or expose their ports to another device.
+The review web controls must remain bound to loopback. They validate Host headers; controls with write endpoints also validate Origin, CSRF tokens, request sizes, and untrusted public-source values. Do not place them behind a proxy or expose their ports to another device.

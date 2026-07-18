@@ -89,6 +89,7 @@ class ReviewStore:
         self.path = path.expanduser().resolve()
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.connection = sqlite3.connect(self.path)
+        self.path.chmod(0o600)
         self.connection.row_factory = sqlite3.Row
         self.connection.executescript(SCHEMA)
 

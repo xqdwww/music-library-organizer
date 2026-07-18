@@ -61,3 +61,6 @@ reuses prior canonical/rating/professional evidence by path, filesystem fingerpr
 artist/album/year identity. It writes only the SQLite state and ignored report output. The Curator server accepts
 GET requests only; all POST requests return HTTP 405. It exposes no selection, plan, apply, quarantine, rollback, or
 purge route.
+The server binds to loopback, rejects non-loopback Host headers, sends no-store and framing protections, and limits
+local cover responses to 20 MiB. Curator reports contain local paths and personal usage history and must remain in
+the ignored private state directory.

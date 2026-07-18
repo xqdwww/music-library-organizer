@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import json
+import os
 import plistlib
 import tempfile
 import unittest
 from datetime import UTC, datetime
 from pathlib import Path
+from types import SimpleNamespace
 
 from music_library_organizer.album_prune.curator import (
     DUPLICATE_VALUE,
@@ -275,6 +277,10 @@ class CuratorSafetyAndWebTests(unittest.TestCase):
             self.assertEqual(report["inputs"]["library"]["media_writes"], 0)
             self.assertEqual(report["summary"]["albums"], 1)
             self.assertFalse((root / "quarantine").exists())
+            if os.name == "posix":
+                self.assertEqual((root / "state").stat().st_mode & 0o777, 0o700)
+                self.assertEqual((root / "state/album-prune.sqlite3").stat().st_mode & 0o777, 0o600)
+                self.assertEqual((root / "state/curator/latest.json").stat().st_mode & 0o777, 0o600)
 
     def test_curator_store_and_ui_are_read_only(self) -> None:
         self.assertIn("Personal Library Curator", HTML)
@@ -293,6 +299,17 @@ class CuratorSafetyAndWebTests(unittest.TestCase):
             handler._json = lambda value, status=200: responses.append((value, status))  # type: ignore[method-assign]
             CuratorHandler.do_POST(handler)
             self.assertEqual(responses, [({"error": "Personal Curator is read-only"}, 405)])
+
+    def test_curator_rejects_non_loopback_host_header(self) -> None:
+        handler = object.__new__(CuratorHandler)
+        handler.path = "/api/curator"
+        handler.headers = {"Host": "attacker.example:8771"}
+        handler.server = SimpleNamespace(server_port=8771)
+        responses: list[tuple[object, int]] = []
+        handler._json = lambda value, status=200: responses.append((value, status))  # type: ignore[method-assign]
+        CuratorHandler.do_GET(handler)
+        self.assertEqual(responses[0][1], 400)
+        self.assertIn("loopback", str(responses[0][0]))
 
 
 if __name__ == "__main__":

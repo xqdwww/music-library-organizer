@@ -10,6 +10,9 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from .service import AlbumPruneService
+from .web_security import LOOPBACK_HOSTS, validate_loopback_request
+
+MAX_COVER_BYTES = 20 * 1024 * 1024
 
 HTML = """<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -47,20 +50,32 @@ class CuratorHandler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
-        self.send_header("Cache-Control", "no-store")
+        self.send_header("Cache-Control", "no-store, max-age=0")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "DENY")
         self.end_headers()
         self.wfile.write(body)
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
         try:
+            validate_loopback_request(self.headers, self.server.server_port)
             if parsed.path == "/":
                 body = HTML.encode()
                 self.send_response(HTTPStatus.OK)
                 self.send_header("Content-Type", "text/html; charset=utf-8")
                 self.send_header("Content-Length", str(len(body)))
                 self.send_header("Cache-Control", "no-store, max-age=0")
-                self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:")
+                self.send_header("Pragma", "no-cache")
+                self.send_header("X-Content-Type-Options", "nosniff")
+                self.send_header("X-Frame-Options", "DENY")
+                self.send_header(
+                    "Content-Security-Policy",
+                    "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; "
+                    "img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; "
+                    "base-uri 'none'; form-action 'none'",
+                )
                 self.end_headers()
                 self.wfile.write(body)
             elif parsed.path == "/api/curator":
@@ -94,6 +109,8 @@ class CuratorHandler(BaseHTTPRequestHandler):
             self.send_response(204)
             self.end_headers()
             return
+        if candidate.stat().st_size > MAX_COVER_BYTES:
+            raise ValueError("cover exceeds 20 MiB")
         data = candidate.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", mimetypes.guess_type(candidate.name)[0] or "application/octet-stream")
@@ -103,7 +120,7 @@ class CuratorHandler(BaseHTTPRequestHandler):
 
 
 def serve_curator(service: AlbumPruneService, host: str, port: int) -> None:
-    if host not in {"127.0.0.1", "::1", "localhost"}:
+    if host not in LOOPBACK_HOSTS:
         raise ValueError("curator server may only bind to loopback")
     server = CuratorServer((host, port), service)
     print(f"Personal Library Curator: http://{host}:{server.server_port}")

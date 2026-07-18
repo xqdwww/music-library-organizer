@@ -42,6 +42,7 @@ class AlbumPruneService:
     def __init__(self, state_root: Path, config: ScoringConfig | None = None):
         self.state_root = state_root.expanduser().resolve()
         self.state_root.mkdir(parents=True, exist_ok=True)
+        self.state_root.chmod(0o700)
         self.store_path = self.state_root / "album-prune.sqlite3"
         self.config = config or ScoringConfig()
 
@@ -417,6 +418,7 @@ class AlbumPruneService:
         destination = output or self.state_root / "curator" / "latest.json"
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        destination.chmod(0o600)
         return {**report, "output": str(destination)}
 
     def curator_report(self) -> dict[str, Any]:

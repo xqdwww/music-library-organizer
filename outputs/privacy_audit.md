@@ -11,6 +11,7 @@ Scopes: current source, tests, fixtures, examples, documentation, GitHub configu
 - No audio, artwork, database, generated media, or file larger than 1 MiB is included.
 - Fixtures are synthetic or minimal public open-data shapes. Personal library reports, inventory counts, directory names, paths, ratings, and review decisions are excluded.
 - Runtime SQLite, cache, reports, selections, plans, and quarantine state are ignored and documented as private.
+- Apple/NetEase curator inputs are read only from user-supplied local exports; personal usage, source paths, and local library paths remain in mode-restricted ignored state and are never sent to a service.
 
 ## History disposition
 
