@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Pin GitHub Actions checkout and Python setup steps to verified commits and
+  disable persisted checkout credentials.
+
 ## 0.2.0 - 2026-07-19
 
 - Add the read-only Personal Library Curator with Apple library imports, optional
